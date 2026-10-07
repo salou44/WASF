@@ -1,0 +1,201 @@
+{
+  "entities": {
+    "Admin": {
+      "title": "Admin",
+      "description": "Admin users",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "createdAt"]
+    },
+    "AppContent": {
+      "title": "App Content",
+      "description": "Global application config and contact settings",
+      "type": "object",
+      "properties": {
+        "contact": {
+          "type": "object",
+          "properties": {
+            "address": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "facebook": { "type": "string" },
+            "instagram": { "type": "string" },
+            "youtube": { "type": "string" },
+            "whatsapp": { "type": "string" },
+            "websiteLink": { "type": "string" }
+          }
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["contact", "updatedAt"]
+    },
+    "AboutUsItem": {
+      "title": "About Us Item",
+      "description": "List of about us / who we are labels",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "createdAt", "updatedAt"]
+    },
+    "WhyUsItem": {
+      "title": "Why Us Item",
+      "description": "Why choose us section items",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "createdAt", "updatedAt"]
+    },
+    "TrainingSession": {
+      "title": "Training Session",
+      "description": "A single training session in the schedule",
+      "type": "object",
+      "properties": {
+        "day": { "type": "string" },
+        "type": { "type": "string" },
+        "time": { "type": "string" },
+        "age": { "type": "string" },
+        "coach": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["day", "type", "time", "age", "coach", "createdAt", "updatedAt"]
+    },
+    "AgeGroup": {
+      "title": "Age Group",
+      "description": "Age groups definitions",
+      "type": "object",
+      "properties": {
+        "age": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "schedule": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["age", "title", "description", "schedule", "createdAt", "updatedAt"]
+    },
+    "Coach": {
+      "title": "Coach",
+      "description": "Coach information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "bio": { "type": "string" },
+        "photo": { "type": "string" },
+        "phone": { "type": "string" },
+        "facebook": { "type": "string" },
+        "instagram": { "type": "string" },
+        "twitter": { "type": "string" },
+        "linkedin": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "role", "bio", "createdAt", "updatedAt"]
+    },
+    "Player": {
+      "title": "Player",
+      "description": "Top players",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "position": { "type": "string" },
+        "evaluation": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "rating": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "position", "rating", "createdAt", "updatedAt"]
+    },
+    "NewsArticle": {
+      "title": "News Article",
+      "description": "News items",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "article": { "type": "string" },
+        "date": { "type": "string" },
+        "readTime": { "type": "string" },
+        "category": { "type": "string" },
+        "images": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "excerpt", "article", "date", "createdAt", "updatedAt"]
+    },
+    "Opinion": {
+      "title": "Opinion",
+      "description": "Testimonials and opinions",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "review": { "type": "string" },
+        "rating": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "role", "review", "rating", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/admins/{userId}": {
+      "schema": { "$ref": "#/entities/Admin" },
+      "description": "Administrator users"
+    },
+    "/site_content/{contentId}": {
+      "schema": { "$ref": "#/entities/AppContent" },
+      "description": "Global config documents e.g., 'global'"
+    },
+    "/about_us/{itemId}": {
+      "schema": { "$ref": "#/entities/AboutUsItem" },
+      "description": "About Us items"
+    },
+    "/why_us/{itemId}": {
+      "schema": { "$ref": "#/entities/WhyUsItem" },
+      "description": "Why Us items"
+    },
+    "/training_sessions/{sessionId}": {
+      "schema": { "$ref": "#/entities/TrainingSession" },
+      "description": "Training Schedule items"
+    },
+    "/age_groups/{groupId}": {
+      "schema": { "$ref": "#/entities/AgeGroup" },
+      "description": "Age groups items"
+    },
+    "/coaches/{coachId}": {
+      "schema": { "$ref": "#/entities/Coach" },
+      "description": "Coaches profiles"
+    },
+    "/players/{playerId}": {
+      "schema": { "$ref": "#/entities/Player" },
+      "description": "Top players profiles"
+    },
+    "/news/{newsId}": {
+      "schema": { "$ref": "#/entities/NewsArticle" },
+      "description": "News articles"
+    },
+    "/opinions/{opinionId}": {
+      "schema": { "$ref": "#/entities/Opinion" },
+      "description": "User opinions and reviews"
+    }
+  }
+}

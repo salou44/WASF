@@ -1,0 +1,47 @@
+# ─── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Build Output ───────────────────────────────────────────────────────────────
+dist/
+build/
+coverage/
+
+# ─── Environment / Secrets ──────────────────────────────────────────────────────
+# Never commit .env files — they contain API keys and private URLs
+.env
+.env.*
+!.env.example
+
+# ─── Temporary / Helper Scripts (dev-only) ──────────────────────────────────────
+fix.cjs
+restore.cjs
+restore.js
+restore_all.cjs
+update.cjs
+update_admin.js
+find_registration_modal.cjs
+test_auth.js
+walid.txt
+
+# ─── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── OS Files ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editor / IDE ───────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*.suo
+
+# ─── TypeScript Cache ───────────────────────────────────────────────────────────
+*.tsbuildinfo

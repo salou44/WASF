@@ -1,0 +1,6 @@
+{
+  "name": "WASF - Future Stars Academy",
+  "description": "Professional football academy website for children with multi-language support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
